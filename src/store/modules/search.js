@@ -4,7 +4,10 @@ export default {
   },
 
   getters: {
-    currentSearch: state => state.currentSearch
+    currentSearch: state => state.currentSearch,
+    currentSearchIsInFavorites: (state, getters) => {
+      return getters.favorites.includes(state.currentSearch)
+    }
   },
 
   actions: {
