@@ -1,3 +1,5 @@
+import db from '../Database'
+
 export default {
   state: {
     favorites: []
@@ -8,11 +10,22 @@ export default {
   },
 
   actions: {
-    addFavorite({ commit, getters }) {
+    addFavorite({ commit, getters, dispatch }) {
       commit('ADD_FAVORITE', getters.currentSearch)
+      dispatch('updateStorage')
     },
     removeFavorite({commit, getters }) {
       commit('REMOVE_FAVORITE', getters.currentSearch)
+    },
+    updateStorage({getters}) {
+      db.ref('/favorites').set(getters.favorites)
+    },
+    fetchFavorites({commit}) {
+      db.ref('/favorites')
+        .once('value')
+        .then(snapshot => {
+          commit('FILL_FROM_STORAGE', snapshot.val())
+        })
     }
   },
 
@@ -26,6 +39,10 @@ export default {
     {
       const index = state.favorites.indexOf(favorite)
       state.favorites.splice(index, 1)
+    },
+
+    FILL_FROM_STORAGE(state, favorites) {
+      state.favorites = favorites
     }
   }
 }

@@ -18,6 +18,9 @@
   export default {
     name: "favorites",
     computed: mapGetters(['favorites']),
-    methods: mapActions(['fetchGiphs'])
+    methods: mapActions(['fetchGiphs', 'fetchFavorites']),
+    created() {
+      this.fetchFavorites();
+    }
   }
 </script>
