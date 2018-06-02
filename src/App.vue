@@ -26,10 +26,7 @@
 
     <section class="p-4">
       <!--search-info-->
-      <div class="text-center">
-        <span class="text-3xl text-purple font-bold">#giphs</span>
-        - <a href="#">+ Add to favorites</a>
-      </div>
+      <search-info />
 
       <!--grid-->
       <giphy-grid />
@@ -40,12 +37,14 @@
 <script>
 import GiphyGrid from './components/GiphyGrid'
 import SearchForm from './components/SearchForm'
+import SearchInfo from './components/SearchInfo'
 
 export default {
   name: 'app',
   components: {
     GiphyGrid,
-    SearchForm
+    SearchForm,
+    SearchInfo
   },
   created() {
     this.$store.dispatch('fetchGiphs', 'giphs')
