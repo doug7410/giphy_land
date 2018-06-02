@@ -7,10 +7,7 @@
       <div class="w-1/5 text-2xl text-green-light text-center">Giphy Land!</div>
 
       <!--search form-->
-      <input type="text"
-             class="w-2/5 text-2xl p-3 text-blue mx-4"
-             placeholder="Find Giphs"
-      />
+      <search-form />
 
       <!--favorites-->
       <div class="w-2/5">
@@ -42,11 +39,13 @@
 
 <script>
 import GiphyGrid from './components/GiphyGrid'
+import SearchForm from './components/SearchForm'
 
 export default {
   name: 'app',
   components: {
-    GiphyGrid
+    GiphyGrid,
+    SearchForm
   },
   created() {
     this.$store.dispatch('fetchGiphs', 'giphs')

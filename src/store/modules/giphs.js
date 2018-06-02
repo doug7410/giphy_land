@@ -23,6 +23,7 @@ export default {
       })
         .then((response) => {
           commit('GIPHS', response.data.data);
+          commit('CURRENT_SEARCH', searchTerm)
         });
     }
   },
