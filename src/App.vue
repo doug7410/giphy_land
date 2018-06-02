@@ -38,9 +38,9 @@
       <div>
 
         <!--card-->
-        <div class="item">
+        <div class="w-1/4 inline-flex">
           <div class="m-2 bg-white overflow-hidden pb-2 shadow-xl rounded text-center">
-            <img src="https://media2.giphy.com/media/YJBNjrvG5Ctmo/giphy.gif" class="max-w-full mb-2">
+            <img src="http://via.placeholder.com/300x300/" class="max-w-full mb-2">
             <a href="#" target="_blank" class="text-blue hover:underline no-underline block">
               Some cool giphy
             </a>
@@ -48,9 +48,9 @@
         </div>
 
         <!--card-->
-        <div class="item">
+        <div class="w-1/4 inline-flex">
           <div class="m-2 bg-white overflow-hidden pb-2 shadow-xl rounded text-center">
-            <img src="https://media0.giphy.com/media/26BRBupa6nRXMGBP2/giphy.gif" class="max-w-full mb-2">
+            <img src="http://via.placeholder.com/300x350/" class="max-w-full mb-2">
             <a href="#" target="_blank" class="text-blue hover:underline no-underline block">
               Some cool giphy
             </a>
@@ -58,14 +58,85 @@
         </div>
 
         <!--card-->
-        <div class="item">
+        <div class="w-1/4 inline-flex">
           <div class="m-2 bg-white overflow-hidden pb-2 shadow-xl rounded text-center">
-            <img src="https://media0.giphy.com/media/l41YlHs99JsSptZf2/giphy-downsized-medium.gif" class="max-w-full mb-2">
+            <img src="http://via.placeholder.com/300x200/" class="max-w-full mb-2">
             <a href="#" target="_blank" class="text-blue hover:underline no-underline block">
               Some cool giphy
             </a>
           </div>
         </div>
+
+        <!--card-->
+        <div class="w-1/4 inline-flex">
+          <div class="m-2 bg-white overflow-hidden pb-2 shadow-xl rounded text-center">
+            <img src="http://via.placeholder.com/300x300/" class="max-w-full mb-2">
+            <a href="#" target="_blank" class="text-blue hover:underline no-underline block">
+              Some cool giphy
+            </a>
+          </div>
+        </div>
+
+        <!--card-->
+        <div class="w-1/4 inline-flex">
+          <div class="m-2 bg-white overflow-hidden pb-2 shadow-xl rounded text-center">
+            <img src="http://via.placeholder.com/300x325/" class="max-w-full mb-2">
+            <a href="#" target="_blank" class="text-blue hover:underline no-underline block">
+              Some cool giphy
+            </a>
+          </div>
+        </div>
+
+        <!--card-->
+        <div class="w-1/4 inline-flex">
+          <div class="m-2 bg-white overflow-hidden pb-2 shadow-xl rounded text-center">
+            <img src="http://via.placeholder.com/300x150/" class="max-w-full mb-2">
+            <a href="#" target="_blank" class="text-blue hover:underline no-underline block">
+              Some cool giphy
+            </a>
+          </div>
+        </div>
+
+        <!--card-->
+        <div class="w-1/4 inline-flex">
+          <div class="m-2 bg-white overflow-hidden pb-2 shadow-xl rounded text-center">
+            <img src="http://via.placeholder.com/300x300/" class="max-w-full mb-2">
+            <a href="#" target="_blank" class="text-blue hover:underline no-underline block">
+              Some cool giphy
+            </a>
+          </div>
+        </div>
+
+        <!--card-->
+        <div class="w-1/4 inline-flex">
+          <div class="m-2 bg-white overflow-hidden pb-2 shadow-xl rounded text-center">
+            <img src="http://via.placeholder.com/300x220/" class="max-w-full mb-2">
+            <a href="#" target="_blank" class="text-blue hover:underline no-underline block">
+              Some cool giphy
+            </a>
+          </div>
+        </div>
+
+        <!--card-->
+        <div class="w-1/4 inline-flex">
+          <div class="m-2 bg-white overflow-hidden pb-2 shadow-xl rounded text-center">
+            <img src="http://via.placeholder.com/300x200/" class="max-w-full mb-2">
+            <a href="#" target="_blank" class="text-blue hover:underline no-underline block">
+              Some cool giphy
+            </a>
+          </div>
+        </div>
+
+        <!--card-->
+        <div class="w-1/4 inline-flex">
+          <div class="m-2 bg-white overflow-hidden pb-2 shadow-xl rounded text-center">
+            <img src="http://via.placeholder.com/300x340/" class="max-w-full mb-2">
+            <a href="#" target="_blank" class="text-blue hover:underline no-underline block">
+              Some cool giphy
+            </a>
+          </div>
+        </div>
+
       </div>
     </section>
   </div>
@@ -77,9 +148,3 @@ export default {
 }
 </script>
 
-<style>
-  .item {
-    width: 25%;
-    float: left;
-  }
-</style>
