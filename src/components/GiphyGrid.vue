@@ -7,17 +7,14 @@
 
 <script>
   import GiphyCard from './GiphyCard'
+  import { mapGetters } from 'vuex'
 
   export default {
     name: "giphy-grid",
     components: {
       GiphyCard
     },
-    computed: {
-      giphs() {
-        return this.$store.getters.giphs;
-      }
-    }
+    computed: mapGetters(['giphs'])
   }
 </script>
 
