@@ -6,7 +6,7 @@ export default {
   },
 
   getters: {
-
+    giphs: state => state.giphs
   },
 
   actions: {
