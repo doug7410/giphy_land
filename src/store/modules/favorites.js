@@ -14,8 +14,9 @@ export default {
       commit('ADD_FAVORITE', getters.currentSearch)
       dispatch('updateStorage')
     },
-    removeFavorite({commit, getters }) {
+    removeFavorite({commit, getters, dispatch }) {
       commit('REMOVE_FAVORITE', getters.currentSearch)
+      dispatch('updateStorage')
     },
     updateStorage({getters}) {
       db.ref('/favorites').set(getters.favorites)
@@ -30,13 +31,11 @@ export default {
   },
 
   mutations: {
-    ADD_FAVORITE(state, favorite)
-    {
+    ADD_FAVORITE(state, favorite) {
       state.favorites.push(favorite)
     },
 
-    REMOVE_FAVORITE(state, favorite)
-    {
+    REMOVE_FAVORITE(state, favorite) {
       const index = state.favorites.indexOf(favorite)
       state.favorites.splice(index, 1)
     },
