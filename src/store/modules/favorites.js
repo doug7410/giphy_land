@@ -1,47 +1,24 @@
 import db from '../Database'
+import { make } from 'vuex-pathify'
+
+const state = {
+    favorites: []
+}
 
 export default {
-  state: {
-    favorites: []
-  },
-
-  getters: {
-    favorites: state => state.favorites
-  },
-
+  state,
   actions: {
-    addFavorite({ commit, getters, dispatch }) {
-      commit('ADD_FAVORITE', getters.currentSearch)
-      dispatch('updateStorage')
-    },
-    removeFavorite({commit, getters, dispatch }) {
-      commit('REMOVE_FAVORITE', getters.currentSearch)
-      dispatch('updateStorage')
-    },
-    updateStorage({getters}) {
-      db.ref('/favorites').set(getters.favorites)
+    ...make.actions('favorites'),
+    updateStorage({state}) {
+      db.ref('/favorites').set(state.favorites)
     },
     fetchFavorites({commit}) {
       db.ref('/favorites')
         .once('value')
         .then(snapshot => {
-          commit('FILL_FROM_STORAGE', snapshot.val())
+          commit('favorites', snapshot.val())
         })
     }
   },
-
-  mutations: {
-    ADD_FAVORITE(state, favorite) {
-      state.favorites.push(favorite)
-    },
-
-    REMOVE_FAVORITE(state, favorite) {
-      const index = state.favorites.indexOf(favorite)
-      state.favorites.splice(index, 1)
-    },
-
-    FILL_FROM_STORAGE(state, favorites) {
-      state.favorites = favorites
-    }
-  }
+  mutations: make.mutations(state)
 }

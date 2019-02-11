@@ -1,22 +1,16 @@
+import { make } from 'vuex-pathify'
+
+const state = {
+  currentSearch: ''
+}
+
 export default {
-  state: {
-    currentSearch: ''
-  },
-
+  state,
   getters: {
-    currentSearch: state => state.currentSearch,
-    currentSearchIsInFavorites: (state, getters) => {
-      return getters.favorites.includes(state.currentSearch)
+    ...make.getters(state),
+    currentSearchIsInFavorites: (state, getters, parentState) => {
+      return parentState.favorites.favorites.includes(state.currentSearch)
     }
   },
-
-  actions: {
-
-  },
-
-  mutations: {
-    CURRENT_SEARCH(state, searchTerm) {
-      state.currentSearch = searchTerm
-    }
-  }
+  mutations: make.mutations(state)
 }

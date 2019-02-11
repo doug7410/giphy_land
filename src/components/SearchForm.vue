@@ -8,7 +8,7 @@
 </template>
 
 <script>
-  import { mapActions } from 'vuex'
+  import { call } from 'vuex-pathify'
 
   export default {
     name: "search-form",
@@ -17,7 +17,7 @@
         searchTerm: ''
       }
     },
-    methods: mapActions(['fetchGiphs'])
+    methods: call(['fetchGiphs'])
   }
 </script>
 

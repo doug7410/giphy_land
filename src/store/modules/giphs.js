@@ -1,14 +1,12 @@
 import axios from "axios/index";
+import { make } from 'vuex-pathify'
+
+const state = {
+  giphs: []
+}
 
 export default {
-  state: {
-    giphs: []
-  },
-
-  getters: {
-    giphs: state => state.giphs
-  },
-
+  state,
   actions: {
     fetchGiphs({ commit }, searchTerm) {
       axios.get('https://api.giphy.com/v1/gifs/search', {
@@ -22,15 +20,10 @@ export default {
         }
       })
         .then((response) => {
-          commit('GIPHS', response.data.data);
-          commit('CURRENT_SEARCH', searchTerm)
+          commit('giphs', response.data.data);
+          commit('currentSearch', searchTerm)
         });
     }
   },
-
-  mutations: {
-    GIPHS(state, giphs) {
-      state.giphs = giphs;
-    },
-  }
+  mutations: make.mutations(state)
 }

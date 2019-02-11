@@ -13,9 +13,9 @@
 
 <script>
   import GiphyCard from './GiphyCard'
-  import { mapGetters } from 'vuex'
   import Vue from 'vue';
   import { VueMasonryPlugin } from 'vue-masonry';
+  import { get } from 'vuex-pathify'
 
   Vue.use(VueMasonryPlugin);
 
@@ -24,7 +24,7 @@
     components: {
       GiphyCard
     },
-    computed: mapGetters(['giphs'])
+    computed: get(['giphs@giphs'])
   }
 </script>
 

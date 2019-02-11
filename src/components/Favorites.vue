@@ -13,14 +13,16 @@
 </template>
 
 <script>
-  import { mapGetters, mapActions } from 'vuex'
+  import { call, sync } from 'vuex-pathify'
 
   export default {
     name: "favorites",
-    computed: mapGetters(['favorites']),
-    methods: mapActions(['fetchGiphs', 'fetchFavorites']),
+    computed: {
+      ...sync(['favorites@favorites']),
+    },
+    methods: call(['fetchGiphs', 'fetchFavorites']),
     created() {
-      this.fetchFavorites();
+      this.fetchFavorites()
     }
   }
 </script>
